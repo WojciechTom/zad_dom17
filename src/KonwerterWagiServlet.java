@@ -13,7 +13,7 @@ public class KonwerterWagiServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Double[] wagi = Konwerter.przeliczWagi(request.getParameter("kilogramy"), request.getParameter("gramy"), request.getParameter("miligramy") );
+        WynikWagi wagi = Konwerter.przeliczWagi(request.getParameter("kilogramy"), request.getParameter("gramy"), request.getParameter("miligramy") );
 
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
@@ -22,9 +22,9 @@ public class KonwerterWagiServlet extends HttpServlet {
             writer.println("Proszę wpisać jedną wartość wag" + "<br>" + "<br>");
         } else {
             writer.println("Podana Wartość w przeliczeniu na" + "<br>" + "<br>");
-            writer.println("kilogramy: " + wagi[0] + "<br>");
-            writer.println("gramy: " + wagi[1] + "<br>");
-            writer.println("miligramy: " + wagi[2] + "<br>");
+            writer.println("kilogramy: " + wagi.getKilogramy() + "<br>");
+            writer.println("gramy: " + wagi.getGramy() + "<br>");
+            writer.println("miligramy: " + wagi.getMiligramy() + "<br>");
         }
 
 

@@ -1,6 +1,6 @@
 public class Konwerter {
 
-    public static Double[] przeliczWagi(String kg, String g, String mg) {
+    public static WynikWagi przeliczWagi(String kg, String g, String mg) {
 
         Double kilogramy = 0.0;
         Double gramy = 0.0;
@@ -30,14 +30,13 @@ public class Konwerter {
         }
 
         if (check == 1) {
-            Double[] wyniki = new Double[]{kilogramy, gramy, miligramy};
-            return wyniki;
+            return new WynikWagi(kilogramy, gramy, miligramy);
         } else {
             return null;
         }
     }
 
-    public static Double[] przeliczMiar(String m, String cm, String mm) {
+    public static WynikMiary przeliczMiar(String m, String cm, String mm) {
 
         Double metry = 0.0;
         Double centymetry = 0.0;
@@ -67,8 +66,7 @@ public class Konwerter {
         }
 
         if (check == 1) {
-            Double[] wyniki = new Double[]{metry, centymetry, milimetry};
-            return wyniki;
+            return new WynikMiary(metry, centymetry, milimetry);
         } else {
             return null;
         }

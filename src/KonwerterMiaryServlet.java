@@ -13,7 +13,7 @@ public class KonwerterMiaryServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      Double[] miary = Konwerter.przeliczMiar(request.getParameter("metry"), request.getParameter("centymetry"),request.getParameter("milimetry"));
+        WynikMiary miary = Konwerter.przeliczMiar(request.getParameter("metry"), request.getParameter("centymetry"),request.getParameter("milimetry"));
 
 
         response.setCharacterEncoding("UTF-8");
@@ -23,9 +23,9 @@ public class KonwerterMiaryServlet extends HttpServlet {
             writer.println("Proszę wpisać jedną wartość miar" + "<br>" + "<br>");
         } else {
             writer.println("Podana Wartość w przeliczeniu na" + "<br>" + "<br>");
-            writer.println("metry: " + miary[0] + "<br>");
-            writer.println("centymetry: " + miary[1] + "<br>");
-            writer.println("milimetry: " + miary[2] + "<br>");
+            writer.println("metry: " + miary.getMetry() + "<br>");
+            writer.println("centymetry: " + miary.getCentymetry() + "<br>");
+            writer.println("milimetry: " + miary.getMilimetry() + "<br>");
         }
     }
 }
