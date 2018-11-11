@@ -1,7 +1,7 @@
 public class LicznikTekstu {
 
 
-    public static String[] licz(String tekst) {
+    public static WynikTekst licz(String tekst) {
 
         String tekst1 = tekst.trim();
 
@@ -17,8 +17,8 @@ public class LicznikTekstu {
 
 
 
-        String[] tabela = {String.valueOf(liczbaSlow), String.valueOf(liczbaZnakow), String.valueOf(liczbaZnakowBezSpacji), String.valueOf(czyPal)};
-        return tabela;
+
+        return new WynikTekst(liczbaSlow, liczbaZnakow, liczbaZnakowBezSpacji, czyPal );
     }
 
 
